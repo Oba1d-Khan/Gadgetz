@@ -7,19 +7,23 @@ import { useState } from "react";
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import { useShoppingCart } from 'use-shopping-cart'
 import { Cart } from "@/components/index"
+import { auth } from "@clerk/nextjs/server";
+import { UserButton } from "@clerk/nextjs";
 
 const Header = () => {
   const [animationParent] = useAutoAnimate()
   const [toggle, setToggle] = useState(false);
 
   const { cartCount, handleCartClick } = useShoppingCart();
+
+  const { userId } = auth();
   return (
     <>
       <nav className="relative mx-auto max-w-[1920px] flex align-center justify-between px-6 lg:px-20 3xl:px-0 py-5 z-30 " >
 
         {/* LOGO */}
         <div>
-          <Link href="/" className="text-2xl ">MiniStore<span className="text-[#72AEC8]">.</span> </Link>
+          <Link href="/" className="text-2xl ">Gadgetz<span className="text-[#72AEC8]">.</span> </Link>
         </div>
 
         <div>
@@ -45,14 +49,20 @@ const Header = () => {
                   alt="search-icon"
                 />
               </Link>
-              <Link href="#">
-                <Image
-                  src="/icons/user-icon.png"
-                  width={20}
-                  height={20}
-                  alt="user-icon"
-                />
-              </Link>{" "}
+
+              {userId ? (
+                <div><UserButton /></div>
+              ) :
+                (< Link href="#">
+                  <Image
+                    src="/icons/user-icon.png"
+                    width={20}
+                    height={20}
+                    alt="user-icon"
+                  />
+                </Link>)
+              }
+
 
               <div className="relative mr-4 cursor-pointer" onClick={() => handleCartClick()}>
                 <Image
@@ -99,7 +109,7 @@ const Header = () => {
 
 
         </div>
-      </nav>
+      </nav >
     </>
   );
 };

@@ -3,6 +3,8 @@ import { Jost, Lato } from 'next/font/google'
 import "./globals.css";
 import Header from "@/components/Header";
 import { CartProvider, Footer, Instagram, SubFooter, SubscribeUs } from "@/components/index";
+import { ClerkProvider } from '@clerk/nextjs'
+
 
 const jost = Jost({
   subsets: ['latin'],
@@ -28,14 +30,16 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={jost.variable}>
-        <CartProvider>
-          <Header />
-          {children}
-          <SubscribeUs />
-          <Instagram />
-          <Footer />
-          <SubFooter />
-        </CartProvider>
+        <ClerkProvider>
+          <CartProvider>
+            <Header />
+            {children}
+            <SubscribeUs />
+            <Instagram />
+            <Footer />
+            <SubFooter />
+          </CartProvider>
+        </ClerkProvider >
       </body>
     </html>
   );

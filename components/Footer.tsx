@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7 mb-8">
                 <div className="col-span-full  lg:col-span-1 lg:block">
                     <Link href="/" className="text-3xl ">
-                        MiniStore<span className="text-[#72AEC8]">.</span>{" "}
+                        Gadgetz<span className="text-[#72AEC8]">.</span>{" "}
                     </Link>
 
                     <p className="my-3 text-xs sm:text-sm  text-[#3A3A3A] ">

@@ -37,6 +37,7 @@ const Cart = () => {
                                 Object.entries(cartDetails).map(([key, item]) => {
                                     return <CartItem item={item} key={key} />;
                                 })}
+
                         </ScrollArea>
                     )}
                 </>
