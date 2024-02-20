@@ -3,7 +3,7 @@ export const navLinks = [
   { href: "/products", label: "Products", key: "products" },
   { href: "/about", label: "About", key: "about" },
   { href: "/blogs", label: "Blogs", key: "blogs" },
-  { href: "/blogs", label: "Contact", key: "contact" },
+  { href: "/contact", label: "Contact", key: "contact" },
 ];
 
 export const categoriesFilter = [

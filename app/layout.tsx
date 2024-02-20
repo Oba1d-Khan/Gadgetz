@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Jost, Lato } from 'next/font/google'
 import "./globals.css";
 import Header from "@/components/Header";
-import { Footer, Instagram, SubFooter, SubscribeUs } from "@/components/index";
+import { CartProvider, Footer, Instagram, SubFooter, SubscribeUs } from "@/components/index";
 
 const jost = Jost({
   subsets: ['latin'],
@@ -28,12 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className={jost.variable}>
-        <Header />
-        {children}
-        <SubscribeUs />
-        <Instagram />
-        <Footer />
-        <SubFooter />
+        <CartProvider>
+          <Header />
+          {children}
+          <SubscribeUs />
+          <Instagram />
+          <Footer />
+          <SubFooter />
+        </CartProvider>
       </body>
     </html>
   );

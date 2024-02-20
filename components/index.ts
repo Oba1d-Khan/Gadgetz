@@ -10,3 +10,7 @@ export { default as Instagram } from "./Instagram";
 export { default as Footer } from "./Footer";
 export { default as SubFooter } from "./SubFooter";
 export { default as Button } from "./Button";
+export { default as AddToCartBtn } from "./AddToCartBtn";
+export { default as Cart } from "./Cart";
+export { default as CartProvider } from "./CartProvider";
+export { default as CartItem } from "./CartItem";

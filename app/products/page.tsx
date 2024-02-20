@@ -8,6 +8,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { client, urlFor } from "../lib/sanity";
+import { Eye } from 'lucide-react';
+import { AddToCartBtn } from "@/components/index";
+
 
 const getData = async () => {
     const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'All']._id, categories)]
@@ -56,27 +59,34 @@ const page = async () => {
 
                         {/* products grid */}
                         <div className="grid md:grid-cols-3 gap-3 justify-items-center lg:grid-cols-4 md:gap-4">
+
                             {products.map((product) => (
                                 <div key={product._id} className="" >
 
                                     <Link
-                                        className="flex flex-col group bg-white  overflow-hidden hover:shadow-lg transition rounded-md "
-                                        href="#"
+                                        className="flex flex-col group bg-white overflow-hidden hover:shadow-lg transition rounded-md relative"
+                                        href={`product/${product.slug}`}
                                     >
                                         <div className="overflow-hidden">
                                             <Image
-                                                className="md:max-w-[10vw] md:object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out "
+                                                className="md:max-w-[10vw] md:object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out"
                                                 src={urlFor(product.images[0]).url()}
                                                 alt="product image"
                                                 width={500}
                                                 height={500}
                                             />
                                         </div>
-                                        <div className="flex justify-between items-center py-1 px-2  ">
-                                            <h3 className="text-sm uppercase ">{product.name}</h3>
+                                        <div className="flex justify-between items-center py-1 px-2">
+                                            <h3 className="text-sm uppercase">{product.name}</h3>
                                             <p className="text-[#72AEC8] text-sm">${product.price}</p>
                                         </div>
+
+                                        <div className="flex justify-center items-center  absolute bottom-10 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                            <AddToCartBtn />
+                                        </div>
+
                                     </Link>
+
                                 </div>
                             ))}
                         </div>

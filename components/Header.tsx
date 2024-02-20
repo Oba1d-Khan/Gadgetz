@@ -5,10 +5,14 @@ import Link from "next/link";
 import Button from "./Button";
 import { useState } from "react";
 import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { useShoppingCart } from 'use-shopping-cart'
+import { Cart } from "@/components/index"
 
 const Header = () => {
   const [animationParent] = useAutoAnimate()
   const [toggle, setToggle] = useState(false);
+
+  const { cartCount, handleCartClick } = useShoppingCart();
   return (
     <>
       <nav className="relative mx-auto max-w-[1920px] flex align-center justify-between px-6 lg:px-20 3xl:px-0 py-5 z-30 " >
@@ -49,14 +53,20 @@ const Header = () => {
                   alt="user-icon"
                 />
               </Link>{" "}
-              <Link href="#">
+
+              <div className="relative mr-4 cursor-pointer" onClick={() => handleCartClick()}>
                 <Image
                   src="/icons/cart-icon.png"
                   width={20}
                   height={20}
                   alt="cart-icon"
                 />
-              </Link>
+                <div className=" w-[35px] h-[15px] absolute left-6 bottom-1 ">
+                  ( {cartCount} )
+                </div>
+
+                <Cart />
+              </div>
             </ul>
           </div>
 
