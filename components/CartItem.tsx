@@ -1,53 +1,88 @@
 import { urlFor } from "@/app/lib/sanity";
 import Image from "next/image";
-import { useShoppingCart } from "use-shopping-cart";
 import { FaPlus, FaMinus, FaX } from "react-icons/fa6";
 
-const CartItem = ({ item }) => {
-    const { removeItem, incrementItem, decrementItem } = useShoppingCart();
+const CartItem = () => {
     return (
-        <div className="flex w-full justify-between mb-4 items-center h-[120px] border-b">
-            <div>
-                {/* <Image
-                    src={urlFor(item.images[0]).url()}
-                    fill
-                    priority
-                    sizes="(max-width : 110px) 110px, 110px"
-                    className="object-contain"
-                    alt=""
-                /> */}
-            </div>
+        <>
+            <div className=" flex flex-col gap-6 border-b border-gray-400 pb-6">
 
-            <div className="w-full max-w-[180px] flex flex-col justify-center gap-4">
-                <div className="flex items-center justify-between">
-                    <h5>{item.name}</h5>
-                    <button onClick={() => removeItem(item.id)}>
-                        <FaX className="text-sm" />
-                    </button>
+                <div className="grid grid-cols-[30vw_20vw_20vw] md:grid-cols-[40vw_20vw_20vw] items-center justify-around md:justify-between">
+
+                    <div className="flex overflow-hidden ">
+                        <Image
+                            className="max-w-[10vw]  md:object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out "
+                            src="/images/iphone-10.png"
+                            alt="product image"
+                            width={500}
+                            height={500}
+                        />
+                        <div className="flex flex-col justify-center ml-4  ">
+                            <h3 className="text-sm uppercase ">Iphone 10</h3>
+                            <p className="text-[#72AEC8] text-sm">$980</p>
+                        </div>
+
+                    </div>
+
+                    <div className="flex text-center items-center  gap-2 ">
+                        <button className="px-2   lg:px-4 lg:py-2 shadow-lg ">-</button>
+                        <div className="w-16 lg:w-20 lg:py-2  shadow-lg ">1</div>
+                        <button className="px-2  lg:px-4 lg:py-2   shadow-lg ">+</button>
+                    </div>
+
+                    <div className="flex gap-2 lg:gap-16 text-center items-center">
+                        <h5 className="text-[#72AEC8] text-xl lg:text-3xl">$980.00</h5>
+                        <Image
+                            className="w-6"
+                            src="/icons/close-icon.png"
+                            width={40}
+                            height={40}
+                            alt="remove-icon"
+                        />
+                    </div>
+
                 </div>
 
-                <div className="flex items-center justify-between">
-                    <div className="flex gap-4">
-                        <button>
-                            <FaMinus
-                                className="text-[10px]"
-                                onClick={() => decrementItem(item.id)}
-                            />
-                        </button>
-                        <div className="font-semibold">{item.quanity}</div>
-                        <button>
-                            <FaPlus
-                                className="text-[10px]"
-                                onClick={() => incrementItem(item.id)}
-                            />
-                        </button>
+                <div className="grid grid-cols-[30vw_20vw_20vw] md:grid-cols-[40vw_20vw_20vw] items-center justify-around md:justify-between">
+
+                    <div className="flex overflow-hidden ">
+                        <Image
+                            className="max-w-[10vw]  md:object-contain group-hover:scale-105 transition-transform duration-500 ease-in-out "
+                            src="/images/iphone-10.png"
+                            alt="product image"
+                            width={500}
+                            height={500}
+                        />
+                        <div className="flex flex-col justify-center ml-4  ">
+                            <h3 className="text-sm uppercase ">Iphone 10</h3>
+                            <p className="text-[#72AEC8] text-sm">$980</p>
+                        </div>
+
                     </div>
-                    <div className="font-semibold text-balance text-right">
-                        ${item.price * item.quantity}
+
+                    <div className="flex text-center items-center  gap-2 ">
+                        <button className="px-2   lg:px-4 lg:py-2 shadow-lg ">-</button>
+                        <div className="w-16 lg:w-20 lg:py-2  shadow-lg ">1</div>
+                        <button className="px-2  lg:px-4 lg:py-2   shadow-lg ">+</button>
                     </div>
+
+                    <div className="flex gap-2 lg:gap-16 text-center items-center">
+                        <h5 className="text-[#72AEC8] text-xl lg:text-3xl">$980.00</h5>
+                        <Image
+                            className="w-6"
+                            src="/icons/close-icon.png"
+                            width={40}
+                            height={40}
+                            alt="remove-icon"
+                        />
+                    </div>
+
                 </div>
+
+
+
             </div>
-        </div>
+        </>
     );
 };
 

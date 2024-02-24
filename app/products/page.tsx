@@ -44,7 +44,7 @@ const page = async () => {
                         <h1 className="md:w-[35vw] font-light uppercase text-center text-5xl  ">
                             Products
                         </h1>
-                        <p>breadcrumb</p>
+                        <p>breadcrumb ⚠️</p>
                     </div>
                 </header>
 
@@ -90,11 +90,14 @@ const page = async () => {
                                 </div>
                             ))}
                         </div>
+
+                        <div className="font-bold flex justify-center items-center py-8">Pagination ⚠️</div>
+
                     </div>
 
                     {/* ------------- right column --------------- */}
                     <div className="">
-                        <p>Search</p>
+                        <p className="font-bold">Search ⚠️</p>
 
                         {/* Filter Lists */}
                         <div>

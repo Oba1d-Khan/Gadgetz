@@ -6,7 +6,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
         <>
             <div className="max-w-[85vw] mx-auto ">
                 <div className=" flex justify-between items-center py-6 ">
-                    <h1 className="text-lg">{sectionTitle}</h1>
+                    <h1 className="text-lg uppercase">{sectionTitle}</h1>
                     <Link href="#" className="uppercase text-sm border-b-2 border-gray-300">
                         Go To Shop
                     </Link>
@@ -76,7 +76,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
                                     src="/images/iphone-8.png"
                                     alt="product image"
                                     width={240}
-                                    height={240}
+                                    height={240} ge
                                 />
                             </div>
                             <div className="flex justify-between items-center p-1">

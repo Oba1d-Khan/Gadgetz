@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { Button, Features, Testimonials } from "@/components/index";
 import Image from "next/image";
 import React from "react";
@@ -6,14 +7,7 @@ const page = () => {
     return (
         <>
             <main>
-                <header className="bg-[#EDF1F3] w-screen mx-auto ">
-                    <div className="flex flex-col items-center justify-center py-10 ">
-                        <h1 className="md:w-[35vw] font-light uppercase text-center text-5xl  ">
-                            About Us
-                        </h1>
-                        <p>breadcrumb</p>
-                    </div>
-                </header>
+                <Header Heading={"About Us"} />
 
                 <Features />
 

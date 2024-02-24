@@ -5,7 +5,7 @@ const SubscribeUs = () => {
             <div className="md:max-w-[85vw] mx-auto bg-[#272727] text-[#FFFFFF] tracking-wide grid grid-rows-2  md:gap-3 pt-12  md:grid-cols-2 md:grid-rows-none md:items-center md:px-10 md:py-8 lg:px-20 lg:py-12">
 
                 <div className="font-light text-center md:text-start">
-                    <h1 className="text-2xl mb-4  md:text-xl md:mb-1 lg:text-2xl lg:mb-2  ">Subscribe Us Now</h1>
+                    <h1 className="text-2xl mb-4  md:text-xl md:mb-1 lg:text-2xl lg:mb-2  uppercase">Subscribe Us Now</h1>
                     <p className=" md:text-xs lg:text-md ">Get latest news, updates and deals directly mailed to your inbox.</p>
                 </div>
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Jost, Lato } from 'next/font/google'
 import "./globals.css";
-import Header from "@/components/Header";
+import Header from "@/components/Navbar";
 import { CartProvider, Footer, Instagram, SubFooter, SubscribeUs } from "@/components/index";
 import { ClerkProvider } from '@clerk/nextjs'
 
@@ -18,7 +18,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "MiniStore",
+  title: "Gadgetz | Online Digital Electronics Shop",
   description: "Digital Gadgets Solution",
 };
 
