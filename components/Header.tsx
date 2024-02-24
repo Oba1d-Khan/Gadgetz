@@ -1,3 +1,4 @@
+import { Breadcrumb } from "@/components/index"
 
 const Header = ({ Heading }) => {
     return (
@@ -7,7 +8,7 @@ const Header = ({ Heading }) => {
                     <h1 className="md:w-[35vw] font-light uppercase text-center text-5xl  ">
                         {Heading}
                     </h1>
-                    <p>breadcrumb ⚠️</p>
+                    <Breadcrumb />
                 </div>
             </header>
         </>

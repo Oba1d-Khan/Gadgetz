@@ -9,8 +9,7 @@ import Link from "next/link";
 import React from "react";
 import { client, urlFor } from "../lib/sanity";
 import { Eye } from 'lucide-react';
-import { AddToCartBtn } from "@/components/index";
-
+import { AddToCartBtn, Header } from "@/components/index";
 
 const getData = async () => {
     const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'All']._id, categories)]
@@ -32,21 +31,15 @@ const getData = async () => {
     return data;
 };
 
+
 const page = async () => {
     const products = await getData();
-    // console.log(products);
 
     return (
         <>
             <main >
-                <header className="bg-[#EDF1F3] w-screen mx-auto ">
-                    <div className="flex flex-col items-center justify-center py-10 ">
-                        <h1 className="md:w-[35vw] font-light uppercase text-center text-5xl  ">
-                            Products
-                        </h1>
-                        <p>breadcrumb ⚠️</p>
-                    </div>
-                </header>
+                <Header Heading={"Products"} />
+
 
                 <section className="max-w-[90vw] md:max-w-[85vw] mx-auto py-6 grid grid-cols-[60vw_20vw] justify-between md:justify-around ">
 
@@ -60,7 +53,7 @@ const page = async () => {
                         {/* products grid */}
                         <div className="grid md:grid-cols-3 gap-3 justify-items-center lg:grid-cols-4 md:gap-4">
 
-                            {products.map((product) => (
+                            {products.map((product: any) => (
                                 <div key={product._id} className="" >
 
                                     <Link

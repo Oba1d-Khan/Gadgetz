@@ -2,20 +2,16 @@
 import { navLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "./Button";
 import { useState } from "react";
 import { useAutoAnimate } from '@formkit/auto-animate/react'
-import { useShoppingCart } from 'use-shopping-cart'
-import { auth } from "@clerk/nextjs/server";
-import { UserButton } from "@clerk/nextjs";
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
   const [animationParent] = useAutoAnimate()
   const [toggle, setToggle] = useState(false);
 
-  // const { cartCount, handleCartClick } = useShoppingCart();
+  const pathname = usePathname()
 
-  // const { userId } = auth();
   return (
     <>
       <nav className="relative mx-auto max-w-[1920px] flex align-center justify-between px-6 lg:px-20 3xl:px-0 py-5 z-30 shadow-md " >
@@ -28,7 +24,9 @@ const Navbar = () => {
         <div>
           <ul className="items-center hidden h-full gap-12 md:flex md:gap-6 lg:gap-10">
             {navLinks.map((link) => (
-              <Link key={link.key} href={link.href}>
+              <Link key={link.key} href={link.href}
+                className={`${pathname === link.href && "border-b border-gray-400 pb-1"}`}
+              >
                 {link.label.toUpperCase()}
               </Link>
             ))}
@@ -62,7 +60,6 @@ const Navbar = () => {
 
 
               <div className="relative mr-4 cursor-pointer"
-              // onClick={() => handleCartClick()}
               >
                 <Image
                   src="/icons/cart-icon.png"
@@ -71,7 +68,6 @@ const Navbar = () => {
                   alt="cart-icon"
                 />
                 <div className=" w-[35px] h-[15px] absolute left-6 bottom-1 ">
-                  {/* ( {cartCount} ) */}
                   (0)
                 </div>
 

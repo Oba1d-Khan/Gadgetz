@@ -14,3 +14,4 @@ export { default as Button } from "./Button";
 export { default as AddToCartBtn } from "./AddToCartBtn";
 export { default as CartProvider } from "./CartProvider";
 export { default as CartItem } from "./CartItem";
+export { default as Breadcrumb } from "./Breadcrumb";

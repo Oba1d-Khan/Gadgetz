@@ -93,7 +93,7 @@ const Footer = () => {
                                 className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
-                                Shop
+                                Products
                             </a>
                         </p>
                         <p>
