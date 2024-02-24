@@ -11,18 +11,19 @@ import 'swiper/css/scrollbar';
 const Testimonials = () => {
     return (
         <>
-            <section className='max-w-[85vw] lg:max-w-[50vw] mx-auto py-10'>
+            <section className=' lg:max-w-[80vw] mx-auto py-10 '>
                 <Swiper className=''
                     modules={[Navigation, Pagination, A11y]}
                     spaceBetween={50}
                     slidesPerView={1}
+                    navigation
                     pagination={{ clickable: true }}
 
                 >
                     <SwiperSlide>
-                        <div className="container flex items-center justify-center px-1 pt-24 pb-10 mx-auto text-gray-600 md:px-5 body-font ">
+                        <div className="container flex items-center justify-center pt-24 pb-10 mx-auto text-gray-600 md:px-5 body-font ">
 
-                            <div className="w-full mx-auto text-center lg:w-1/2 xl:w-2/3 ">
+                            <div className="w-full mx-auto text-center max-w-[70vw] md:max-w-[80vw] lg:w-1/2 xl:w-2/3 ">
                                 <Image
                                     src="/icons/quote.png"
                                     width={60}
