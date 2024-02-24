@@ -89,7 +89,7 @@ const ProductDetails = async ({ params }) => {
                     </div>
                 </div>
 
-                <div className="max-w-[60vw] mx-auto flex flex-col gap-2 md:gap-0 md:flex-row  justify-around items-center uppercase py-12 md:text-lg tracking-wide">
+                <div className="max-w-[60vw] mx-auto flex flex-col gap-2 lg:gap-0 lg:flex-row  justify-around items-center uppercase py-12 md:text-lg tracking-wide">
                     <h2>Description</h2>
                     <h2>Additional Information</h2>
                     <h2>Reviews(2)</h2>
