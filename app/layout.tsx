@@ -18,7 +18,7 @@ const lato = Lato({
 })
 
 export const metadata: Metadata = {
-  title: "Gadgetz | Online Digital Electronics Shop",
+  title: "Gadgetz | Smartphones, Watches, Tech Essentials",
   description: "Digital Gadgets Solution",
 };
 

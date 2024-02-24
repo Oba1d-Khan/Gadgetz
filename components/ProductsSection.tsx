@@ -4,9 +4,9 @@ import Link from "next/link";
 const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
     return (
         <>
-            <div className="max-w-[80vw] mx-auto ">
+            <div className="max-w-[80vw] mx-auto py-10">
                 <div className="flex items-center justify-between py-6 tracking-wide ">
-                    <h1 className="text-lg uppercase">{sectionTitle}</h1>
+                    <h1 className="text-lg font-medium uppercase">{sectionTitle}</h1>
                     <Link href="#" className="text-sm uppercase border-b-2 border-gray-300">
                         Go To Shop
                     </Link>
@@ -19,7 +19,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
 
                     <div className=" md:max-w-[16vw]">
                         <Link
-                            className="flex flex-col overflow-hidden transition bg-white group hover:shadow-lg "
+                            className="flex flex-col overflow-hidden transition bg-white group "
                             href="#"
                         >
                             <div className="overflow-hidden">
@@ -43,7 +43,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
 
                     <div className=" md:max-w-[16vw] ">
                         <Link
-                            className="flex flex-col overflow-hidden transition bg-white group hover:shadow-lg "
+                            className="flex flex-col overflow-hidden transition bg-white group "
                             href="#"
                         >
                             <div className="overflow-hidden ">
@@ -67,7 +67,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
 
                     <div className=" md:max-w-[16vw] ">
                         <Link
-                            className="flex flex-col overflow-hidden transition bg-white group hover:shadow-lg "
+                            className="flex flex-col overflow-hidden transition bg-white group "
                             href="#"
                         >
                             <div className="overflow-hidden ">
@@ -90,7 +90,7 @@ const ProductsSection = ({ sectionTitle }: { sectionTitle: string }) => {
 
                     <div className=" md:max-w-[16vw] ">
                         <Link
-                            className="flex flex-col overflow-hidden transition bg-white group hover:shadow-lg "
+                            className="flex flex-col overflow-hidden transition bg-white group "
                             href="#"
                         >
                             <div className="overflow-hidden ">

@@ -72,7 +72,7 @@ const Navbar = () => {
                 />
                 <div className=" w-[35px] h-[15px] absolute left-6 bottom-1 ">
                   {/* ( {cartCount} ) */}
-                  ()
+                  (0)
                 </div>
 
               </div>

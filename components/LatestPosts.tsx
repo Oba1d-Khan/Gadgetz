@@ -7,8 +7,8 @@ const LatestPosts = ({ sectionTitle }: { sectionTitle: string }) => {
             <section className="p-6 max-w-[80vw] mx-auto">
 
 
-                <div className="flex items-center justify-between my-10 tracking-wide ">
-                    <h1 className="text-lg font-normal uppercase">{sectionTitle}</h1>
+                <div className="flex items-center justify-between mt-10 tracking-wide ">
+                    <h1 className="text-lg font-medium uppercase">{sectionTitle}</h1>
                     <Link
                         href="#"
                         className="text-sm uppercase border-b-2 border-gray-300"
@@ -17,7 +17,7 @@ const LatestPosts = ({ sectionTitle }: { sectionTitle: string }) => {
                     </Link>
                 </div>
 
-                <div className="grid grid-rows-3 gap-8 md:max-w-[85vw] md:mx-auto md:grid-rows-none md:grid-cols-3 md:gap-4">
+                <div className="grid grid-rows-3 gap-8 md:max-w-[80vw] md:mx-auto md:grid-rows-none md:grid-cols-3 md:gap-4 pt-4">
 
                     <Link className="flex flex-col transition hover:shadow-lg " href="#">
                         <Image

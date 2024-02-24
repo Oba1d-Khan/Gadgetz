@@ -5,10 +5,10 @@ import React from 'react'
 const SubFooter = () => {
     return (
         <footer>
-            <div className=" py-2 mt-3 border-t border-gray-200 dark:border-gray-300">
+            <div className="py-2 mt-3 border-t border-gray-200 dark:border-gray-300">
 
                 <div className="grid grid-cols-2 gap-y-3 md:gap-0  md:grid-cols-3 items-center justify-between  w-full max-w-[85vw] py-1 mx-auto ">
-                    <div className="space-x-4  flex items-center justify-start">
+                    <div className="flex items-center justify-start space-x-4">
                         <p className="text-xs text-[#3A3A3A]">We ship with:</p>
                         <Link
                             className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
@@ -26,7 +26,7 @@ const SubFooter = () => {
                         </Link>
                     </div>
 
-                    <div className="space-x-4 flex items-center justify-end md:justify-start text-end md:text-start">
+                    <div className="flex items-center justify-end space-x-4 md:justify-start text-end md:text-start">
                         <p className="text-xs  text-[#3A3A3A]">Payment options:</p>
                         <Link
                             className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
@@ -51,8 +51,8 @@ const SubFooter = () => {
                         </Link>
                     </div>
 
-                    <p className="md:text-end  text-xs  text-[#3A3A3A] ">
-                        © Copyright 2025 &#xb7;  MiniStore.
+                    <p className="md:text-end  text-xs  text-[#3A3A3A] tracking-wider">
+                        © Copyright 2024 &#xb7;  Gadgetz.
                     </p>
                 </div>
             </div></footer>

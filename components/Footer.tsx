@@ -3,77 +3,66 @@ import Link from "next/link";
 
 const Footer = () => {
     return (
-        <footer className="w-full max-w-[85vw] py-12  mx-auto ">
+        <footer className="w-full max-w-[80vw] py-12  mx-auto ">
             {/* Footer */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-7 mb-8">
-                <div className="col-span-full  lg:col-span-1 lg:block">
-                    <Link href="/" className="text-3xl ">
+            <div className="grid grid-cols-2 mb-8 md:grid-cols-3 lg:grid-cols-4 gap-7">
+                <div className="col-span-full lg:col-span-1 lg:block">
+                    <Link href="/" className="text-3xl font-medium">
                         Gadgetz<span className="text-[#72AEC8]">.</span>{" "}
                     </Link>
-
                     <p className="my-3 text-xs sm:text-sm  text-[#3A3A3A] ">
-                        Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
-                        Gravida massa volutpat aenean odio erat nullam fringilla.
+                        Sync Your Style with Technology: Discover Watches and Smartphones Galore!
                     </p>
 
                     {/* Social Links */}
-                    <div className="space-x-4 ">
-                        <Link
-                            className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
-                            href="#"
-                        >
+                    <div className="space-x-4">
+                        <Link className="inline-block" href="#">
                             <Image
                                 src="/icons/fb-logo.png"
-                                width={10}
-                                height={10}
+                                width={20}
+                                height={20}
                                 alt="fb-logo"
+                                className="transition-transform duration-300 hover:scale-110"
                             />
                         </Link>
-                        <Link
-                            className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
-                            href="#"
-                        >
+                        <Link className="inline-block" href="#">
                             <Image
                                 src="/icons/ig-logo.png"
                                 width={16}
                                 height={16}
                                 alt="ig-logo"
+                                className="transition-transform duration-300 hover:scale-110"
                             />
                         </Link>
-                        <Link
-                            className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
-                            href="#"
-                        >
+                        <Link className="inline-block" href="#">
                             <Image
                                 src="/icons/twitter-logo.png"
                                 width={16}
                                 height={16}
                                 alt="ig-logo"
+                                className="transition-transform duration-300 hover:scale-110"
                             />
-                        </Link>{" "}
-                        <Link
-                            className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
-                            href="#"
-                        >
+                        </Link>
+                        <Link className="inline-block" href="#">
                             <Image
                                 src="/icons/linkedIn-logo.png"
                                 width={16}
                                 height={16}
                                 alt="ig-logo"
+                                className="transition-transform duration-300 hover:scale-110"
                             />
-                        </Link>{" "}
-                        <Link
-                            className="inline-block text-gray-500 hover:text-[#72AEC8] dark:hover:text-[#72AEC8]"
-                            href="#"
-                        >
+                        </Link>
+                        <Link className="inline-block " href="#">
                             <Image
                                 src="/icons/youtube-logo.png"
                                 width={16}
                                 height={16}
                                 alt="ig-logo"
+                                className="transition-transform duration-300 hover:scale-110 "
                             />
                         </Link>
                     </div>
+
                 </div>
 
                 {/* Quick Links */}
@@ -82,10 +71,10 @@ const Footer = () => {
                         Quick Links
                     </h4>
 
-                    <div className="mt-3 grid space-y-3 text-xs uppercase">
+                    <div className="grid mt-3 space-y-3 text-xs uppercase">
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-[#272727] hover:text-[#72AEC8]  dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-[#272727] hover:text-[#72AEC8]    dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Home
@@ -93,7 +82,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 About
@@ -101,7 +90,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Shop
@@ -109,7 +98,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Blogs
@@ -117,7 +106,7 @@ const Footer = () => {
                         </p>{" "}
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Contact
@@ -132,10 +121,10 @@ const Footer = () => {
                         Help & Info
                     </h4>
 
-                    <div className="mt-3 grid space-y-3 text-xs uppercase">
+                    <div className="grid mt-3 space-y-3 text-xs uppercase">
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-green-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Track Your Order
@@ -143,7 +132,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Return Policies
@@ -151,7 +140,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Shipping + Delivery
@@ -159,7 +148,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Contact Us
@@ -167,7 +156,7 @@ const Footer = () => {
                         </p>
                         <p>
                             <a
-                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black dark:hover:text-[#72AEC8] dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                                className="inline-flex gap-x-2 text-gray-900 hover:text-[#72AEC8] dark:text-black   dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                                 href="#"
                             >
                                 Faqs
@@ -182,7 +171,7 @@ const Footer = () => {
                         Contact Us
                     </h4>
 
-                    <div className="mt-3 grid space-y-3 text-sm">
+                    <div className="grid mt-3 space-y-3 text-sm">
                         <p>
                             <Link
                                 className="inline-flex flex-col gap-x-2  text-[#3A3A3A]  dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
