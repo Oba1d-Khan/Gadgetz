@@ -6,3 +6,8 @@
 .swiper-button-next::after {
     color: rgb(62, 62, 62);
 }
+
+
+.swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}

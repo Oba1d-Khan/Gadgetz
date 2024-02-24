@@ -22,11 +22,11 @@ const Navbar = () => {
 
         {/* LOGO */}
         <div>
-          <Link href="/" className="text-2xl ">Gadgetz<span className="text-[#72AEC8]">.</span> </Link>
+          <Link href="/" className="text-2xl font-semibold">Gadgetz<span className="text-[#72AEC8]">.</span> </Link>
         </div>
 
         <div>
-          <ul className="hidden h-full gap-12 items-center md:flex md:gap-6 lg:gap-10">
+          <ul className="items-center hidden h-full gap-12 md:flex md:gap-6 lg:gap-10">
             {navLinks.map((link) => (
               <Link key={link.key} href={link.href}>
                 {link.label.toUpperCase()}
@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         {/* nav icons */}
-        <div className="flex items-center justify-between gap-8 md:gap-12  ">
+        <div className="flex items-center justify-between gap-8 md:gap-12 ">
 
           <div>
             <ul className="flex gap-5">
@@ -94,7 +94,7 @@ const Navbar = () => {
             {toggle &&
               <div className="lg:hidden max-h-[84vh] fixed inset-x-0 top-20 mx-6 flex flex-col items-center rounded-xl bg-gray-800 text-white z-40 shadow-gray-800 shadow-2xl  ">
 
-                <div className="flex flex-col justify-center h-screen text-xl items-center  gap-8">
+                <div className="flex flex-col items-center justify-center h-screen gap-8 text-xl">
                   {navLinks.map((link) => (
                     <Link key={link.key} href={link.href}>
                       {link.label.toUpperCase()}
