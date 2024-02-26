@@ -50,5 +50,31 @@ export default {
         },
       ],
     },
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'category',
+          },
+        },
+      ],
+    },
+    {
+      name: 'brands',
+      title: 'Brands',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: {
+            type: 'category',
+          },
+        },
+      ],
+    },
   ],
 }

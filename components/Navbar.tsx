@@ -59,7 +59,7 @@ const Navbar = () => {
 
 
 
-              <div className="relative mr-4 cursor-pointer"
+              <Link href="/cart" className="relative mr-4 cursor-pointer"
               >
                 <Image
                   src="/icons/cart-icon.png"
@@ -71,7 +71,7 @@ const Navbar = () => {
                   (0)
                 </div>
 
-              </div>
+              </Link>
             </ul>
           </div>
 

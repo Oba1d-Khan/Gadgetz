@@ -1,4 +1,4 @@
-interface Product {
+export interface ProductType {
   _id: string;
   name: string;
   description: string;
@@ -7,4 +7,5 @@ interface Product {
   images: Array<{ url: string }>;
   slug: string;
   categories: string[];
+  // length: number;
 }

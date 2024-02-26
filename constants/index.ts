@@ -32,3 +32,9 @@ export const pricesFilter = [
   { href: "#", label: "$30-$40", key: "$30-$40" },
   { href: "#", label: "$40-$50", key: "$40-$50" },
 ];
+
+export const sortOption = [
+  { name: "Newest", value: "/?date=desc" },
+  { name: "Price, low to high", value: "/?price=asc" },
+  { name: "Price, high to low", value: "/?price=desc" },
+];

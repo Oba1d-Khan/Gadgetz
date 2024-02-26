@@ -24,7 +24,7 @@ const page = () => {
                     </div>
 
                     <div className="flex flex-col items-center justify-center gap-4 py-4 md:items-start   ">
-                        <h3 className="uppercase text-[#272727] text-xl ">How was Ministore Found?</h3>
+                        <h3 className="uppercase text-[#272727] text-xl ">How was Gadgetz Found?</h3>
                         <p className="text-[#3A3A3A] text-sm">
                             Risus augue curabitur diam senectus congue velit et. Sed vitae
                             metus nibh sit era. Nulla adipiscing pharetra pellentesque

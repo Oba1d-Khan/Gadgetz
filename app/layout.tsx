@@ -20,6 +20,9 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "Gadgetz | Smartphones, Watches, Tech Essentials",
   description: "Digital Gadgets Solution",
+  icons: {
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({
