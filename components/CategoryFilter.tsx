@@ -1,10 +1,5 @@
 "use client";
-import {
-    brandsFilter,
-    categoriesFilter,
-    pricesFilter,
-    tagsFilter,
-} from "@/constants";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -64,7 +59,7 @@ const CategoryFilter = () => {
                     </div>
 
                     {/* Filters Section */}
-                    <div>
+                    {/* <div>
                         <div>
                             <h1 className="mt-4 font-medium tracking-wide underline uppercase">
                                 Categories
@@ -116,7 +111,7 @@ const CategoryFilter = () => {
                                 ))}
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
 
                 </div>
 

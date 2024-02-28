@@ -1,71 +1,67 @@
-import {
-    brandsFilter,
-    categoriesFilter,
-    pricesFilter,
-    tagsFilter,
-} from "@/constants";
+import { Filters } from "@/constants";
 import { Header, CategoryFilter, ProductsListing } from "@/components/index";
-import Link from "next/link";
 import { client } from "../lib/sanity";
+import { ProductFilters } from "@/components/index";
+
 
 interface Props {
     searchParams: {
-        date?: string
-        price?: string
-    }
+        date?: string;
+        price?: string;
+        category?: string;
+        tag?: string;
+        brand?: string;
+    };
 }
 
 const page = async ({ searchParams }: Props) => {
 
-    const priceOrder = searchParams.price ? ` | order(price ${searchParams.price} ) ` : ""
-    const dateOrder = searchParams.date ? ` | order(_createdAt ${searchParams.date} )` : ""
+    const { date, price, category, tag, brand } = searchParams
 
-    const order = `${priceOrder}${dateOrder}`
 
+    const productQuery = `_type == 'product' `
+
+    const priceOrder = price ? `| order(price ${price} )` : "";
+    const dateOrder = date ? `| order(_createdAt ${date} )` : "";
+    const order = `${priceOrder}${dateOrder}`;
+
+    const categoryFilter = category ? `&& "${category}" in categories` : " "
+    const tagFilter = tag ? `&& "${tag}" in tags` : " "
+    const brandFilter = brand ? `&& "${brand}" in brands` : " "
+    const filter = `*[${productQuery}${categoryFilter} ${tagFilter} ${brandFilter}]`
 
     const getData = async () => {
-        const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'All']._id, categories)] ${order}
-
+        const query = ` ${filter} ${order}
         {
         _id,
+        _createdAt,
          name,
          description,
           images,
          price,
          price_id,
          "slug" : slug.current,
-         "categories": categories[]-> {
-            name
-          }
-      }`;
+    }`
 
         const data = await client.fetch(query);
-
         return data;
     };
 
     const products = await getData();
 
     return (
-
-
         <>
-            <main >
+            <main>
                 <Header Heading={"Products"} />
 
-
                 <section className="max-w-[90vw] relative md:max-w-[85vw] mx-auto py-20 grid grid-cols-[80vw_10vw] gap-2 md:grid-cols-[60vw_20vw]  justify-between md:justify-around">
-
                     {/* -------------- left column -----------------*/}
 
                     <ProductsListing products={products} />
 
-
                     {/* ------------- right column --------------- */}
 
-
                     <div className="hidden md:block">
-
                         {/* Search */}
                         <div className="my-3 shadow-sm">
                             <div className="relative flex flex-wrap items-stretch mb-4">
@@ -100,65 +96,13 @@ const page = async ({ searchParams }: Props) => {
 
                         {/* Filter Lists */}
                         <div>
-                            <div>
-                                <h1 className="mt-4 font-medium tracking-wide underline uppercase">
-                                    Categories
-                                </h1>
-                                <ul className="flex flex-col gap-1 py-2">
-                                    {categoriesFilter.map((item) => (
-                                        <Link href={item.href} key={item.key} className="">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h1 className="mt-4 font-medium tracking-wide underline uppercase">
-                                    Tags
-                                </h1>
-                                <ul className="flex flex-col gap-1 py-2">
-                                    {tagsFilter.map((item) => (
-                                        <Link href={item.href} key={item.key} className="">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h1 className="mt-4 font-medium tracking-wide underline uppercase">
-                                    Brands
-                                </h1>
-                                <ul className="flex flex-col gap-1 py-2">
-                                    {brandsFilter.map((item) => (
-                                        <Link href={item.href} key={item.key} className="">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </ul>
-                            </div>
-
-                            <div>
-                                <h1 className="mt-4 font-medium tracking-wide underline uppercase">
-                                    Filter by Price
-                                </h1>
-                                <ul className="flex flex-col gap-1 py-2">
-                                    {pricesFilter.map((item) => (
-                                        <Link href={item.href} key={item.key} className="">
-                                            {item.label}
-                                        </Link>
-                                    ))}
-                                </ul>
-                            </div>
+                            <ProductFilters />
                         </div>
-
                     </div>
 
                     <div className="md:hidden">
                         <CategoryFilter />
                     </div>
-
                 </section>
             </main>
         </>

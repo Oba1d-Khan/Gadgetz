@@ -6,35 +6,41 @@ export const navLinks = [
   { href: "/contact", label: "Contact", key: "contact" },
 ];
 
-export const categoriesFilter = [
-  { href: "#", label: "All", key: "all" },
-  { href: "#", label: "Phones", key: "phones" },
-  { href: "#", label: "Accessories", key: "accessories" },
-  { href: "#", label: "Tablets", key: "tablets" },
-  { href: "#", label: "Watches", key: "watches" },
-];
-
-export const tagsFilter = [
-  { href: "#", label: "White", key: "white" },
-  { href: "#", label: "Cheap", key: "cheap" },
-  { href: "#", label: "Mobile", key: "mobile " },
-  { href: "#", label: "Modern", key: "modern" },
-];
-export const brandsFilter = [
-  { href: "#", label: "Apple", key: "apple" },
-  { href: "#", label: "Samsung", key: "samsung" },
-  { href: "#", label: "Pixel", key: "pixel" },
-];
-export const pricesFilter = [
-  { href: "#", label: "Less than $10", key: "lessThan$10" },
-  { href: "#", label: "$10-$20", key: "$10-$20" },
-  { href: "#", label: "$20-$30", key: "$20-$30" },
-  { href: "#", label: "$30-$40", key: "$30-$40" },
-  { href: "#", label: "$40-$50", key: "$40-$50" },
-];
-
 export const sortOption = [
   { name: "Newest", value: "/?date=desc" },
   { name: "Price, low to high", value: "/?price=asc" },
   { name: "Price, high to low", value: "/?price=desc" },
+];
+
+export const Filters = [
+  {
+    id: "category",
+    name: "Category",
+    options: [
+      { label: "All", value: "all" },
+      { label: "Phones", value: "phones" },
+      { label: "Accessories", value: "accessories" },
+      { label: "Tablets", value: "tablets" },
+      { label: "Watches", value: "watches" },
+    ],
+  },
+  {
+    id: "tag",
+    name: "Tag",
+    options: [
+      { label: "Dark Color", value: "dark color" },
+      { label: "Modern", value: "modern" },
+      { label: "Light Color", value: "light color" },
+      { label: "Cheap", value: "cheap" },
+    ],
+  },
+  {
+    id: "brand",
+    name: "Brand",
+    options: [
+      { label: "Apple", value: "apple" },
+      { label: "Samsung", value: "samsung" },
+      { label: "Google Pixel", value: "google pixel" },
+    ],
+  },
 ];

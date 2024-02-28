@@ -15,6 +15,11 @@ export default defineType({
       type: 'string',
     },
     {
+      name: 'currency',
+      title: 'Currency',
+      type: 'string',
+    },
+    {
       name: 'price',
       title: 'Product Price',
       type: 'number',
@@ -44,10 +49,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: {
-            type: 'category',
-          },
+          type: 'string',
         },
       ],
     },
@@ -57,10 +59,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: {
-            type: 'category',
-          },
+          type: 'string',
         },
       ],
     },
@@ -70,10 +69,7 @@ export default defineType({
       type: 'array',
       of: [
         {
-          type: 'reference',
-          to: {
-            type: 'category',
-          },
+          type: 'string',
         },
       ],
     },
