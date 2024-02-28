@@ -15,5 +15,6 @@ export { default as AddToCartBtn } from "./AddToCartBtn";
 export { default as CartProvider } from "./CartProvider";
 export { default as CartItem } from "./CartItem";
 export { default as Breadcrumb } from "./Breadcrumb";
-export { default as Products } from "./Products";
+export { default as ProductsListing } from "./ProductsListing";
 export { default as CategoryFilter } from "./CategoryFilter";
+export { default as ProductSort } from "./ProductSort";

@@ -1,40 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import { client, urlFor } from "../app/lib/sanity";
-import { AddToCartBtn, Header } from "@/components/index";
+import { urlFor } from "../app/lib/sanity";
+import { AddToCartBtn, Header, ProductSort } from "@/components/index";
 import { PackageX } from "lucide-react";
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
 
-const Products = async () => {
-    const getData = async () => {
-        const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'All']._id, categories)]
 
-        {
-        _id,
-         name,
-         description,
-          images,
-         price,
-         price_id,
-         "slug" : slug.current,
-         "categories": categories[]-> {
-            name
-          }
-      }`;
+const ProductsListing = async ({ products }) => {
 
-        const data = await client.fetch(query);
-
-        return data;
-    };
-
-    const products = await getData();
 
     return (
         <div>
@@ -43,16 +16,7 @@ const Products = async () => {
                     <div>
                         <div className="flex items-center justify-between h-8 my-2 text-xs md:w-full md:text-md max-w-[96vw]">
                             <h5>Showing {products.length} of {products.length}  results </h5>
-                            <Select>
-                                <SelectTrigger className="w-[180px]">
-                                    <SelectValue placeholder="Default sorting" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="light">Light</SelectItem>
-                                    <SelectItem value="dark">Dark</SelectItem>
-                                    <SelectItem value="system">System</SelectItem>
-                                </SelectContent>
-                            </Select>
+                            <ProductSort />
                         </div>
 
                         {/* products grid */}
@@ -116,4 +80,4 @@ const Products = async () => {
     );
 };
 
-export default Products;
+export default ProductsListing;

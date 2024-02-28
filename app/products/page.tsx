@@ -4,12 +4,51 @@ import {
     pricesFilter,
     tagsFilter,
 } from "@/constants";
-import { Products, Header, CategoryFilter } from "@/components/index";
+import { Header, CategoryFilter, ProductsListing } from "@/components/index";
 import Link from "next/link";
+import { client } from "../lib/sanity";
 
-const page = () => {
+interface Props {
+    searchParams: {
+        date?: string
+        price?: string
+    }
+}
+
+const page = async ({ searchParams }: Props) => {
+
+    const priceOrder = searchParams.price ? ` | order(price ${searchParams.price} ) ` : ""
+    const dateOrder = searchParams.date ? ` | order(_createdAt ${searchParams.date} )` : ""
+
+    const order = `${priceOrder}${dateOrder}`
+
+
+    const getData = async () => {
+        const query = `*[_type == 'product' && references(*[_type == 'category' && name == 'All']._id, categories)] ${order}
+
+        {
+        _id,
+         name,
+         description,
+          images,
+         price,
+         price_id,
+         "slug" : slug.current,
+         "categories": categories[]-> {
+            name
+          }
+      }`;
+
+        const data = await client.fetch(query);
+
+        return data;
+    };
+
+    const products = await getData();
 
     return (
+
+
         <>
             <main >
                 <Header Heading={"Products"} />
@@ -19,7 +58,9 @@ const page = () => {
 
                     {/* -------------- left column -----------------*/}
 
-                    <Products />
+                    <ProductsListing products={products} />
+
+
                     {/* ------------- right column --------------- */}
 
 
