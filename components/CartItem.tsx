@@ -43,7 +43,9 @@ const CartItem = () => {
 
                 </div>
 
-                <div className="grid grid-cols-[30vw_20vw_20vw] md:grid-cols-[40vw_20vw_20vw] items-center justify-around md:justify-between">
+
+
+                {/* <div className="grid grid-cols-[30vw_20vw_20vw] md:grid-cols-[40vw_20vw_20vw] items-center justify-around md:justify-between">
 
                     <div className="flex overflow-hidden ">
                         <Image
@@ -77,8 +79,7 @@ const CartItem = () => {
                         />
                     </div>
 
-                </div>
-
+                </div> */}
 
 
             </div>

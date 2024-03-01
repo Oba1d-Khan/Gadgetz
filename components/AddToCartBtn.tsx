@@ -1,20 +1,31 @@
 'use client'
 import { ShoppingCart } from "lucide-react";
+import { Button } from "./ui/button";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "@/app/redux/CartReducer";
+import { toast } from "./ui/use-toast";
 
 
-const AddToCartBtn = () => {
+const AddToCartBtn = ({ product }) => {
 
-
-    const product = {
-
-    }
+    const { productData } = useSelector((state: any) => state.cart)
+    console.log(productData);
+    const dispatch = useDispatch();
 
     return (
         <>
-            <button
-                className=" absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-[#272727] text-white   rounded-md opacity-0 transition-opacity duration-300 group-hover:opacity-100 px-6 py-3 text-sm md:text-[8px] md:py-2 md:px-6 lg:px-6 lg:py-2 lg:text-[10px] font-medium tracking-wide  uppercase ">
-                <ShoppingCart size={20} />
-            </button>
+            <Button
+                variant="outline"
+                onClick={() => {
+                    dispatch(addToCart(product));
+                    toast({
+                        title: "Product Added To Cart!",
+                    })
+                }}
+
+            >
+                Add to Cart
+            </Button >
         </>
     );
 };

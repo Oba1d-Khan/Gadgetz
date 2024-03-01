@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { urlFor } from "../app/lib/sanity";
-import { AddToCartBtn, Header, ProductSort } from "@/components/index";
+import { AddToCartBtn, Header, PaginationControls, ProductSort } from "@/components/index";
 import { PackageX } from "lucide-react";
 
 
@@ -51,23 +51,8 @@ const ProductsListing = async ({ products }) => {
                         </div>
 
                         {/* pagination */}
-                        <div className="md:max-w-[20vw] lg:max-w-[10vw] mx-auto font-semibold flex justify-between items-center py-12">
-                            <Image
-                                src="/icons/angle-left.png"
-                                width={40}
-                                height={40}
-                                alt="angle"
-                            />
-                            <div>1</div>
-                            <div>2</div>
-                            <div>3</div>
-                            <Image
-                                src="/icons/angle-right.png"
-                                width={40}
-                                height={40}
-                                alt="angle"
-                            />
-                        </div>
+                        <PaginationControls />
+
                     </div>
                 ) : (
                     <div className="border-2 border-dashed border-slate-300 flex flex-col justify-center items-center w-full h-[90vh] bg-slate-100 text-slate-800 text-xl gap-6">

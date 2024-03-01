@@ -36,7 +36,7 @@ const Hero = () => {
                             <h1 className="font-light uppercase text-center text-5xl md:text-start md:text-4xl md:w-[25vw] lg:text-5xl">
                                 Watches  <br />That Define You.
                             </h1>
-                            <Button type="button" title="Explore Watch" variant="bg-[#272727]" />
+                            <Button type="button" title="Explore Watch" variant="bg-nightBlack" />
                         </div>
 
                     </div>

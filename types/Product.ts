@@ -6,6 +6,4 @@ export interface ProductType {
   price_id: string;
   images: Array<{ url: string }>;
   slug: string;
-  categories: string[];
-  // length: number;
 }

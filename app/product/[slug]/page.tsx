@@ -1,28 +1,31 @@
 import { client, urlFor } from "@/app/lib/sanity"
 import Image from "next/image"
 import Link from "next/link"
-import { AddToCartBtn, Button, ProductsSection } from "@/components/index"
+import { AddToCartBtn, ProductsSection } from "@/components/index"
 import { ShoppingCart, ChevronLeft } from "lucide-react";
 import { FaStar } from "react-icons/fa";
+import { Button } from "@/components/ui/button"
 
-
-const getData = async (slug) => {
-    const query = `*[_type == 'product' && slug.current == '${slug}' ][0] {
-        _id,
-        images,
-        price,
-        price_id,
-        name,
-        description,
-        "slug" : slug.current,
-        "category" : categories->{name}
-    }`;
-    const data = await client.fetch(query);
-    return data;
+interface Props {
+    params: {
+        slug: string
+    }
 }
 
-const ProductDetails = async ({ params }) => {
-    const product = await getData(params.slug);
+const ProductDetails = async ({ params }: Props) => {
+    const query = `*[_type == 'product' && slug.current == '${params.slug}' ][0] 
+        {
+            _id,
+            _createdAt,
+             name,
+             description,
+              images,
+             price,
+             price_id,
+             "slug" : slug.current,
+        }`;
+
+    const product = await client.fetch(query);
 
     return (
         <>
@@ -78,9 +81,8 @@ const ProductDetails = async ({ params }) => {
                             <button className="px-2  lg:px-4 lg:py-2   shadow-lg ">+</button>
                         </div>
 
-                        <div className="flex gap-4">
-                            <Button type="button" title="Buy now" variant="bg-[#72AEC8]" />
-                            <Button type="button" title="Add to Cart" variant="bg-[#272727]" />
+                        <div className="">
+                            <AddToCartBtn product={product} />
                         </div>
 
                         <div>

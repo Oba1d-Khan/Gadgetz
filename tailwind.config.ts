@@ -17,6 +17,21 @@ const config = {
         "2xl": "1400px",
       },
     },
+    colors: {
+      white: "#ffffff",
+      nightBlack: "#272727",
+      skyBlue: "#72AEC8",
+      cloudGray: "#D7DDDF",
+      silverGray: "#E1E1E1",
+      coalBlack: "#252525",
+      charcoalGray: "#3A3A3A",
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "960px",
+      xl: "1440px",
+    },
     fontFamily: {
       inter: ["Inter", "sans-serif"],
       lato: ["Lato", "sans-serif"],
